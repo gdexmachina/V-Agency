@@ -36,7 +36,7 @@ export default function SiteNav() {
 
         <a
           href="mailto:hello@aura.studio"
-          className="hidden items-center gap-2 rounded-full bg-ink px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#393932] md:flex"
+          className="hidden items-center gap-2 rounded-full bg-acid px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.12em] text-ink transition-colors hover:bg-[#c7ed35] md:flex"
         >
           Start a project <ArrowUpRight size={13} />
         </a>
