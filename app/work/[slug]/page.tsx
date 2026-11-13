@@ -31,13 +31,14 @@ export default function ProjectPage({ params }: Props) {
   return (
     <article className="px-5 pb-20 md:px-10 md:pb-32">
       <div className="mx-auto max-w-[1600px]">
-        <Link href="/#work" className="mt-7 inline-flex items-center gap-2 eyebrow text-black/60">
+        <Link href="/portfolio" className="mt-7 inline-flex items-center gap-2 eyebrow text-black/60">
           <ArrowLeft size={13} /> All projects
         </Link>
         <div className="grid gap-8 pb-10 pt-16 md:grid-cols-[1.3fr_0.7fr] md:items-end md:pb-16 md:pt-24">
           <div>
             <p className="mb-5 eyebrow text-black/50">
-              {project.number} / 04 &nbsp;·&nbsp; {project.category} &nbsp;·&nbsp; {project.year}
+              {project.number} / {String(projects.length).padStart(2, "0")} &nbsp;·&nbsp;{" "}
+              {project.category} &nbsp;·&nbsp; {project.year}
             </p>
             <h1 className="section-title text-[clamp(4rem,12vw,12rem)]">{project.name}</h1>
           </div>

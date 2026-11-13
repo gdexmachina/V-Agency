@@ -8,6 +8,7 @@ import { projects } from "@/data/projects";
 
 export default function WorkRail() {
   const railRef = useRef<HTMLDivElement>(null);
+  const featuredProjects = projects.filter((project) => project.featured);
 
   const scroll = (direction: -1 | 1) => {
     railRef.current?.scrollBy({
@@ -23,7 +24,7 @@ export default function WorkRail() {
         className="work-scroll flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-3 md:gap-6 md:px-10"
         aria-label="Selected projects"
       >
-        {projects.map((project, index) => (
+        {featuredProjects.map((project, index) => (
           <Link
             href={`/work/${project.slug}`}
             key={project.slug}
@@ -41,7 +42,7 @@ export default function WorkRail() {
                 style={{ backgroundColor: project.color }}
               />
               <span className="absolute left-4 top-4 rounded-full bg-paper/90 px-3 py-1.5 eyebrow">
-                {project.number} / 04
+                {project.number} / {String(featuredProjects.length).padStart(2, "0")}
               </span>
               <span className="absolute bottom-4 right-4 grid h-10 w-10 place-items-center rounded-full bg-acid text-ink transition-transform duration-300 group-hover:rotate-45">
                 <ArrowRight size={16} />
@@ -59,7 +60,7 @@ export default function WorkRail() {
           </Link>
         ))}
         <div className="grid w-[35vw] shrink-0 place-items-center bg-acid md:w-[24vw]">
-          <Link href="/#contact" className="flex flex-col items-center gap-4 text-center">
+          <Link href="/contact" className="flex flex-col items-center gap-4 text-center">
             <span className="grid h-16 w-16 place-items-center rounded-full border border-ink">
               <ArrowRight size={22} />
             </span>

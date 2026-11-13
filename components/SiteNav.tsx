@@ -23,23 +23,23 @@ export default function SiteNav() {
         </Link>
 
         <nav className="hidden items-center gap-9 md:flex" aria-label="Main navigation">
-          <a href="/#work" className="nav-link eyebrow">
-            Selected work
-          </a>
+          <Link href="/portfolio" className="nav-link eyebrow">
+            Portfolio
+          </Link>
           <a href="/#studio" className="nav-link eyebrow">
             Studio
           </a>
-          <a href="/#contact" className="nav-link eyebrow">
+          <Link href="/contact" className="nav-link eyebrow">
             Contact
-          </a>
+          </Link>
         </nav>
 
-        <a
-          href="mailto:hello@aura.studio"
+        <Link
+          href="/contact"
           className="hidden items-center gap-2 rounded-full bg-acid px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.12em] text-ink transition-colors hover:bg-[#c7ed35] md:flex"
         >
           Start a project <ArrowUpRight size={13} />
-        </a>
+        </Link>
 
         <button
           type="button"
@@ -53,15 +53,23 @@ export default function SiteNav() {
       </div>
       {menuOpen && (
         <nav className="absolute left-0 right-0 top-full flex flex-col gap-6 bg-paper px-6 pb-8 pt-7 md:hidden">
-          <a href="/#work" onClick={() => setMenuOpen(false)} className="section-title text-5xl">
-            Work
-          </a>
+          <Link
+            href="/portfolio"
+            onClick={() => setMenuOpen(false)}
+            className="section-title text-5xl"
+          >
+            Portfolio
+          </Link>
           <a href="/#studio" onClick={() => setMenuOpen(false)} className="section-title text-5xl">
             Studio
           </a>
-          <a href="/#contact" onClick={() => setMenuOpen(false)} className="section-title text-5xl">
+          <Link
+            href="/contact"
+            onClick={() => setMenuOpen(false)}
+            className="section-title text-5xl"
+          >
             Contact
-          </a>
+          </Link>
         </nav>
       )}
     </header>

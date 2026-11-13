@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight, MoveUpRight } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight, MoveUpRight } from "lucide-react";
 import WorkRail from "@/components/WorkRail";
 
 function OrbitMark() {
@@ -49,7 +49,7 @@ export default function Home() {
             <p className="eyebrow max-w-[190px] leading-relaxed text-white/65">
               Independent creative studio
               <br />
-              New York · Everywhere
+              Identity · Digital · Direction
             </p>
             <span className="eyebrow hidden text-right text-white/65 md:block">
               Design for
@@ -118,6 +118,14 @@ export default function Home() {
           <span className="hidden pb-2 eyebrow text-black/45 md:block">Drag or scroll →</span>
         </div>
         <WorkRail />
+        <div className="mt-8 flex justify-center px-5 md:mt-10">
+          <Link
+            href="/portfolio"
+            className="inline-flex items-center gap-3 rounded-full border border-black/25 px-5 py-3 eyebrow transition-colors hover:border-ink hover:bg-ink hover:text-paper"
+          >
+            Explore all selected work <ArrowRight size={14} />
+          </Link>
+        </div>
       </section>
 
       <section id="studio" className="px-5 pb-24 md:px-10 md:pb-36">
@@ -188,10 +196,10 @@ export default function Home() {
               </h2>
             </div>
             <Link
-              href="mailto:hello@aura.studio"
+              href="/contact"
               className="inline-flex w-fit items-center gap-4 border-b border-white/40 pb-3 text-xl tracking-[-0.05em] transition-colors hover:border-acid hover:text-acid md:text-2xl"
             >
-              hello@aura.studio <ArrowUpRight size={20} />
+              Start a conversation <ArrowUpRight size={20} />
             </Link>
           </div>
           <div className="mt-20 flex flex-col justify-between gap-4 border-t border-white/20 pt-5 text-[10px] uppercase tracking-[0.13em] text-white/55 md:flex-row">
